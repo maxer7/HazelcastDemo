@@ -12,9 +12,9 @@ public class DataPopulator {
     public void populateRandomData(IMap<Integer, Integer> distributedMap, int elementsCount) {
         for (int i = 0; i < elementsCount; i++) {
             int key = i;
-            int value = i * 1000;
+            int value = (int) Math.pow(key, 2);
             distributedMap.put(key, value);
-            LOGGER.debug("Put {}:{} int map", key, value);
+            LOGGER.info("Put {} : {} into map", key, value);
             ThreadUtils.sleepUnsafe(500);
         }
     }

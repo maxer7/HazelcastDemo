@@ -9,10 +9,10 @@ public class DataConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DataConsumer.class);
 
-    public void consumeRandomData(IMap<Integer, Integer> distributedMap, int elementsCount) {
+    public void consume(IMap<Integer, Integer> distributedMap, int elementsCount) {
         for (int i = 0; i < elementsCount; i++) {
             int key = i;
-            LOGGER.debug("Get be key {} in map. Value is {} ", key, distributedMap.get(key));
+            LOGGER.debug("Get by key {}. Value is {} ", key, distributedMap.get(key));
             ThreadUtils.sleepUnsafe(500);
         }
     }
