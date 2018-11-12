@@ -19,7 +19,7 @@ public class MapPopulatorDemo {
 
     }
 
-    public void populateRandomData(IMap<Long, Long> distributedMap) {
+    private void populateRandomData(IMap<Long, Long> distributedMap) {
         Stream.iterate(0, (i) -> ++i)
             .forEach(i -> {
                 putKeySquareIntoMap(i, distributedMap);
@@ -27,7 +27,7 @@ public class MapPopulatorDemo {
     }
 
 
-    public void populateRandomData(IMap<Long, Long> distributedMap, IAtomicLong atomicLong) {
+    private void populateRandomData(IMap<Long, Long> distributedMap, IAtomicLong atomicLong) {
         while (true) {
             putKeySquareIntoMap(atomicLong.incrementAndGet(), distributedMap);
         }
