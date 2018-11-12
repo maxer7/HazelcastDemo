@@ -1,4 +1,4 @@
-package com.epam.data;
+package com.epam.demo.step1;
 
 import com.epam.util.ThreadUtils;
 import com.hazelcast.core.IAtomicLong;
@@ -8,11 +8,16 @@ import org.slf4j.LoggerFactory;
 
 import java.util.stream.Stream;
 
-public class DataPopulator {
+public class MapPopulatorDemo {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(DataPopulator.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MapPopulatorDemo.class);
 
+    public void show(IMap<Long, Long> map) {
+        // simple
+        populateRandomData(map);
+        // with atomic long
 
+    }
 
     public void populateRandomData(IMap<Long, Long> distributedMap) {
         Stream.iterate(0, (i) -> ++i)
@@ -32,7 +37,7 @@ public class DataPopulator {
         long value = (long) Math.pow(key, 2);
         distributedMap.put(key, value);
         LOGGER.info("Put {} : {} into map", key, value);
-        //ThreadUtils.sleepUnsafe(10);
+        ThreadUtils.sleepUnsafe(100);
     }
 
 }
