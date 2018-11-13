@@ -14,10 +14,11 @@ public class LockDemo {
     public void show(ILock lock) {
         Stream.iterate(0, i -> ++i)
             .forEach(i -> {
-                LOGGER.info("Trying to lock...");
                 try {
+                    LOGGER.info("Trying to lock...");
+                    lock.lock();
                     LOGGER.info("Lock is acquired. Process hard logic...");
-                    ThreadUtils.sleepUnsafe(5000);
+                    ThreadUtils.sleepUnsafe(2000);
                 } finally {
                     LOGGER.info("Releasing lock...");
                     lock.unlock();

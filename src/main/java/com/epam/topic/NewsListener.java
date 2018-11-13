@@ -11,7 +11,6 @@ public class NewsListener implements MessageListener<News> {
 
     @Override
     public void onMessage(Message<News> message) {
-        ;
         LOGGER.debug("From {}. Message {}", message.getPublishingMember().getAddress(), message.getMessageObject());
     }
 
