@@ -16,18 +16,18 @@ public class Main {
         HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(ConfigProvider.getDefaultConfig());
 
         //1 step show map
-//        new MapPopulatorDemo().show(hazelcastInstance.getMap("demoMap"));
+        //new MapPopulatorDemo().show(hazelcastInstance.getMap("demoMap"));
 
         //2 lock
-//        new LockDemo().show(hazelcastInstance.getLock("demoLock"));
+        //new LockDemo().show(hazelcastInstance.getLock("demoLock"));
 
-//        //3 topic
-//        new TopicDemo().show(hazelcastInstance.getTopic("demoTopic"));
-//
-//        //4 just run
-//
-//        //task executor
-//        new TaskProcessor().process(hazelcastInstance.getQueue("demoQueue"));
+        //3 topic
+        //new TopicDemo().show(hazelcastInstance.getTopic("demoTopic"));
+
+        //4 executor demo
+
+        // final demo
+        //new TaskProcessor().process(hazelcastInstance.getQueue("demoQueue"));
     }
 
 }
