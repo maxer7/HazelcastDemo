@@ -12,7 +12,7 @@ public class TaskProcessor {
 
     public void process(IQueue<Task> tasks) {
         while (true) {
-            ThreadUtils.sleepUnsafe(1000);
+            ThreadUtils.sleepUnsafe(500);
             LOGGER.info("Polling queue...Size = {}", tasks.size());
             if (!tasks.isEmpty()) {
                 tasks.poll().process();

@@ -17,6 +17,6 @@ public class SubTask implements Task {
 
     @Override
     public void process() {
-        LOGGER.info("Sum of {} and {} is {}", a, b , a-b);
+        LOGGER.info("Sub of {} and {} is {}", a, b , a-b);
     }
 }
