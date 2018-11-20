@@ -11,17 +11,17 @@ public class LockDemo {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LockDemo.class);
 
-    public void show(ILock lock) {
+    public void show(ILock distributedLock) {
         Stream.iterate(0, i -> ++i)
             .forEach(i -> {
                 try {
                     LOGGER.info("Trying to lock...");
-                    lock.lock();
+                    distributedLock.lock();
                     LOGGER.info("Lock is acquired. Process hard logic...");
-                    ThreadUtils.sleepUnsafe(2000);
+                    ThreadUtils.sleepUnsafe(5000);
                 } finally {
                     LOGGER.info("Releasing lock...");
-                    lock.unlock();
+                    distributedLock.unlock();
                 }
             });
     }

@@ -7,7 +7,6 @@ public class ConfigProvider {
     public static Config getDefaultConfig() {
         Config config = new Config();
         config.setProperty("hazelcast.logging.type", "slf4j");
-        ManagementConfigProvider.enableManagementConfig(config);
         return config;
     }
 

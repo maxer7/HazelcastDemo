@@ -13,21 +13,14 @@ public class MapPopulatorDemo {
     private static final Logger LOGGER = LoggerFactory.getLogger(MapPopulatorDemo.class);
 
     public void show(IMap<Long, Long> map) {
-        // simple
-        populateRandomData(map);
-        // with atomic long
-
-    }
-
-    private void populateRandomData(IMap<Long, Long> distributedMap) {
-        Stream.iterate(0, (i) -> ++i)
+        Stream.iterate(0L, (i) -> ++i)
             .forEach(i -> {
-                putKeySquareIntoMap(i, distributedMap);
+                putKeySquareIntoMap(i, map);
             });
+
     }
 
-
-    private void populateRandomData(IMap<Long, Long> distributedMap, IAtomicLong atomicLong) {
+    public void show(IMap<Long, Long> distributedMap, IAtomicLong atomicLong) {
         while (true) {
             putKeySquareIntoMap(atomicLong.incrementAndGet(), distributedMap);
         }

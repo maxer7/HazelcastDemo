@@ -12,22 +12,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance(ConfigProvider.getDefaultConfig());
 
-        //1 step show map
-        //new MapPopulatorDemo().show(hazelcastInstance.getMap("demoMap"));
-
-        //2 lock
-        //new LockDemo().show(hazelcastInstance.getLock("demoLock"));
-
-        //3 topic
-        //new TopicDemo().show(hazelcastInstance.getTopic("demoTopic"));
-
-        //4 executor demo
-
-        // final demo
-        //new TaskProcessor().process(hazelcastInstance.getQueue("demoQueue"));
     }
 
 }
